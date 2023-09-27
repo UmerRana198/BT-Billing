@@ -98,7 +98,7 @@ export default function SignIn() {
         Cookies.set("userEmail", email);
         Cookies.set("electricityrights",electricityrights)
         Cookies.set("maintenancerights",maintenancerights)
-        console.log("Before navigate");
+        console.log("electric",electricityrights);
         navigate("/dashboard/special-pages/Customer", { replace: true });
         window.location.reload() 
         console.log("After navigate");
