@@ -420,7 +420,7 @@ const Addcustomer = () => {
 
                   <Col xl={3} >
                   <label className="form-label">
-                      btnostatus
+                      BTNO Status
                     </label>
                     <Form.Select
                       name="btnostatus"
