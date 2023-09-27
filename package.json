@@ -16,6 +16,7 @@
     "@fullcalendar/daygrid": "^5.9.0",
     "@fullcalendar/list": "^5.9.0",
     "@fullcalendar/react": "^5.11.0",
+    "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.10",
     "@mui/x-data-grid": "^6.15.0",
     "@reduxjs/toolkit": "^1.8.1",

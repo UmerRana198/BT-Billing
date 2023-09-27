@@ -15,6 +15,9 @@ import Login from "./views/auth/Login"
 import { IndexRouters } from "./router";
 import { SimpleRouter } from "./router/simple-router";
 import { DefaultRouter } from "./router/default-router";
+import Cookies from "js-cookie";
+
+
 
 const router = createBrowserRouter([
   {
@@ -22,18 +25,18 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   ...DefaultRouter,
-  ...IndexRouters,
-  ...SimpleRouter
+  // ...IndexRouters,
+  // ...SimpleRouter
 ] ,{basename: process.env.PUBLIC_URL });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+
     <Provider store={store}>
       <App>
         <RouterProvider router={router}></RouterProvider>
       </App>
     </Provider>
-  </React.StrictMode>
+ 
 );
 
 // If you want to start measuring performance in your app, pass a function

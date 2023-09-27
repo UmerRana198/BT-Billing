@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -79,12 +79,7 @@ export default function SignIn() {
       if (email == "") {
         alert("please Enter Email");
       }
-      // dispatch(
-      //   setUserData({
-      //     email,
-      //     usertype,
-      //   })
-      // );
+    
     
       notification.success({
         message: "Welcome!",
@@ -103,8 +98,10 @@ export default function SignIn() {
         Cookies.set("userEmail", email);
         Cookies.set("electricityrights",electricityrights)
         Cookies.set("maintenancerights",maintenancerights)
-        
+        console.log("Before navigate");
         navigate("/dashboard/special-pages/Customer", { replace: true });
+        window.location.reload() 
+        console.log("After navigate");
       }
       
     } catch (error) {
@@ -132,7 +129,8 @@ export default function SignIn() {
         });
       }
     }
-  }    
+  }  
+
 
   const [formData, setFormData] = useState({
     Email: "",
@@ -152,6 +150,7 @@ export default function SignIn() {
     }));
   };
 
+  
 
 
 

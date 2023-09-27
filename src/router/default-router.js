@@ -2,27 +2,20 @@ import React from 'react'
 import Index from '../views/dashboard/index'
 // import { Switch, Route } from 'react-router-dom'
 
-import Widgetbasic from '../views/dashboard/widget/widgetbasic';
-import Widgetcard from '../views/dashboard/widget/widgetcard';
-import Widgetchart from '../views/dashboard/widget/widgetchart';
-
-// Form
-import FormElement from '../views/dashboard/from/form-element';
-import FormValidation from '../views/dashboard/from/form-validation';
-import FormWizard from '../views/dashboard/from/form-wizard';
-
-
 import Customer from '../views/dashboard/special-pages/AddCustomer'
-import Admin from '../views/dashboard/admin/admin';
 import Default from '../layouts/dashboard/default';
 import ViewCustomer from '../views/dashboard/special-pages/ViewCustomer';
+import Cookies from "js-cookie";
+
+import { Navigate } from 'react-router-dom'; 
+const Email=Cookies.get("userEmail")
 
 
 
 
 export const DefaultRouter = [
     {
-        path: '/',
+        path: '*',
         element: <Default />,
         children: [
             {
@@ -31,10 +24,10 @@ export const DefaultRouter = [
             },
             {
                 path: 'dashboard/special-pages/Customer',
-                element: <Customer />
+                element: Cookies.get("userEmail") ? <Customer /> : <Navigate to="/" />,
             },{
                 path: 'dashboard/special-pages/ViewCustomer',
-                element: <ViewCustomer />
+                element: Cookies.get("userEmail") ? <ViewCustomer /> : <Navigate to="/" />,
             },
            
         ]

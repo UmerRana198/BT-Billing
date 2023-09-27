@@ -27,15 +27,25 @@ import * as SettingSelector from '../../../../store/setting/selectors'
 
 
 import Cookies from 'js-cookie'
-
+import { useNavigate } from 'react-router-dom'
 
 
 
 const Header = memo((props) => {
+    const navigate=useNavigate()
     const navbarHide = useSelector(SettingSelector.navbar_show); // array
     const headerNavbar = useSelector(SettingSelector.header_navbar)
     const UserEmail = Cookies.get("userEmail", "usertype");
 
+
+
+    const handleLogout = () => {
+
+        Cookies.remove("userEmail");
+        navigate('/');
+        window.location.reload(true);
+        
+      };
     useEffect(() => {
         // navbarstylemode
         if (headerNavbar === 'navs-sticky' || headerNavbar === 'nav-glass') {
@@ -267,7 +277,7 @@ const Header = memo((props) => {
                                     <Dropdown.Item href="/">Profile</Dropdown.Item>
                                     <Dropdown.Item href="/">Privacy Setting</Dropdown.Item>
                                     <Dropdown.Divider />
-                                    <Dropdown.Item as={Link} to="/">Logout</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Nav>
