@@ -57,7 +57,7 @@ useEffect(() => {
     console.log('Params: ', params);
     const rowdata = params;
     dataArray['Customer'] = rowdata;
-    navigate('/updatecustomer', { replace: true });
+    navigate('/dashboard/updatecustomer', { replace: true });
     
   };
 

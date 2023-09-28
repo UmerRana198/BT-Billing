@@ -14,8 +14,11 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import { notification } from "antd";
 import { useDispatch } from "react-redux";
-
 import Cookies from "js-cookie";
+import { Tab } from "react-bootstrap";
+
+
+
 
 const defaultTheme = createTheme();
 
@@ -98,10 +101,10 @@ export default function SignIn() {
         Cookies.set("userEmail", email);
         Cookies.set("electricityrights",electricityrights)
         Cookies.set("maintenancerights",maintenancerights)
-        console.log("electric",electricityrights);
-        navigate("/dashboard/special-pages/Customer", { replace: true });
+       
+        navigate("/dashboard/Customer", { replace: true });
         window.location.reload() 
-        console.log("After navigate");
+     
       }
       
     } catch (error) {
@@ -156,6 +159,7 @@ export default function SignIn() {
 
   
   return (
+    <Tab.Container defaultActiveKey="customerInfo">
     <div style={{ marginLeft: "50px" ,marginTop:'120px'}}>
       <NavBar />
       <ThemeProvider theme={defaultTheme}>
@@ -242,5 +246,6 @@ export default function SignIn() {
         </Container>
       </ThemeProvider>
     </div>
+    </Tab.Container>
   );
 }

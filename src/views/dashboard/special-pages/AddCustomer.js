@@ -233,7 +233,7 @@ const Addcustomer = () => {
               <Form.Group>
                 <Row className="p-1">
 
-                  <Col xl={3}>
+                  <Col xl={4}>
                   <label className="form-label">
                       Customer Name
                     </label>
@@ -251,7 +251,7 @@ const Addcustomer = () => {
                   </Col>
 
 
-                  <Col xl={3}>
+                  <Col xl={4}>
                   <label className="form-label">CNIC No</label>
                     <Form.Control
                       type="text"
@@ -267,7 +267,7 @@ const Addcustomer = () => {
                   </Col>
 
 
-                  <Col xl={3}>
+                  <Col xl={4}>
                   <label className="form-label">
                       Father Name
                     </label>
@@ -285,7 +285,7 @@ const Addcustomer = () => {
                   </Col>
 
 
-                  <Col xl={3}>
+                  <Col xl={4}>
                   <label className="form-label">
                       Mobile No
                     </label>
@@ -301,10 +301,8 @@ const Addcustomer = () => {
                       {errors.mobileno}
                     </Form.Control.Feedback>
                   </Col>
-                </Row>
 
-                <Row className="p-1">
-                  <Col xl={3}>
+                  <Col xl={4}>
                   <label className="form-label">
                       Telephone No
                     </label>
@@ -321,7 +319,7 @@ const Addcustomer = () => {
                     </Form.Control.Feedback>
                   </Col>
 
-                  <Col xl={3}>
+                  <Col xl={4}>
                   <label className="form-label">Projects</label>
                     <Form.Select
                       name="project"
@@ -343,8 +341,10 @@ const Addcustomer = () => {
                       {errors.project}
                     </Form.Control.Feedback>
                   </Col>
+                </Row>
 
-                  <Col xl={3}>
+                <Row className="p-1">
+                <Col xl={4}>
                   <label className="form-label">Sub Project</label>
                     <Form.Select
                       name="subproject"
@@ -363,8 +363,8 @@ const Addcustomer = () => {
                       {errors.subproject}
                     </Form.Control.Feedback>
                   </Col>
-
-                  <Col xl={3}>
+                  
+                  <Col xl={4}>
                   <label className="form-label">
                       Installed On
                     </label>
@@ -379,11 +379,7 @@ const Addcustomer = () => {
                       {errors.installedon}
                     </Form.Control.Feedback>
                   </Col>
-                </Row>
-
-
-                <Row className="p-1">
-                  <Col xl={3}>
+                  <Col xl={4}>
                   <label className="form-label">Tariff</label>
                     <Form.Select
                       name="tariffid" // Updated name attribute to "tariffId"
@@ -402,7 +398,11 @@ const Addcustomer = () => {
                       {errors.tariffid} {/* Updated to "tariffId" */}
                     </Form.Control.Feedback>
                   </Col>
-                  <Col xl={3}>
+                </Row>
+
+
+                <Row className="p-1">
+                  <Col xl={4}>
                   <label className="form-label">NTN No</label>
                     <Form.Control
                       type="text"
@@ -418,7 +418,7 @@ const Addcustomer = () => {
                   </Col>
 
 
-                  <Col xl={3} >
+                  <Col xl={4} >
                   <label className="form-label">
                       BTNO Status
                     </label>
@@ -437,7 +437,7 @@ const Addcustomer = () => {
                     </Form.Control.Feedback>
                   </Col>
 
-                  <Col xl={3}>
+                  <Col xl={4}>
                   <label className="form-label">
                       Location SeqNo
                     </label>
@@ -457,7 +457,7 @@ const Addcustomer = () => {
 
 
                 <Row className="p-1">
-                  <Col xl={3}>
+                  <Col xl={4}>
                   <label className="form-label">
                       Bank No
                     </label>
@@ -473,8 +473,6 @@ const Addcustomer = () => {
                       {errors.bankno}
                     </Form.Control.Feedback>
                   </Col>
-
-
                   <Col style={{ marginTop: "30PX" }}>
                     <Button
                       variant="primary"
@@ -484,10 +482,7 @@ const Addcustomer = () => {
                       Save Record
                     </Button>
                   </Col>
-
-
-
-                </Row>
+                  </Row>
               </Form.Group>
             </Form>
           </Tab.Pane>

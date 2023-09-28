@@ -1,109 +1,119 @@
-
-
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 import axios from "axios";
+import dataArray from "./Util";
 import Cookies from "js-cookie";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 import { notification } from "antd";
+
 
 
 const defaultTheme = createTheme();
 
-export default function SignIn() {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+export default function Updateuser() {
+  const [dataArray1, setDataArray1] = useState({
+    electricityrights: "",
+    maintenancerights:"",
+  });
 
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const iselectricityadmin = Cookies.get("electricityrights") || "";
+  const ismaintenanceadmin = Cookies.get("maintenancerights") || "";
   const [formData, setFormData] = useState({
     user_id: 0,
     email: "",
     password: "",
-    electricityrights: "",
-    maintenancerights: "",
+    userrights: "",
   });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevState) => ({
+    setDataArray1((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const { email, password } = formData;
+  const handleCheckboxChange = (event) => {
+    const { name, checked } = event.target;
 
-    if (email === "") {
-      // ... (error handling for email)
-      return;
-    }
-    if (password === "") {
-      // ... (error handling for password)
-      return;
-    }
-
-    try {
-      console.log("formdata", formData);
-      const response = await axios.post(
-        // "https://localhost:7285/api/User/signup",
-       "https://btkbilling.bsite.net/api/User/signup",
-        formData
+    if (checked) {
+      setSelectedOptions((prevOptions) => [...prevOptions, name]);
+    } else {
+      setSelectedOptions((prevOptions) =>
+        prevOptions.filter((option) => option !== name)
       );
-
-      notification.success({
-        message: "Registration Successful",
-        description: "You have successfully registered your account.",
-      });
-    } catch (error) {
-      if (error.response && error.response.status === 400) {
-        notification.error({
-          message: "Email Already Registered",
-         
-        });
-      } else {
-        console.error("Error occurred during login:", error);
-      }
     }
   };
 
-  const iselectricityadmin = Cookies.get("electricityrights") || "";
-  const ismaintenanceadmin = Cookies.get("maintenancerights") || "";
+  const handleCheckboxConcatenation = () => {
+    const concatenatedOptions = selectedOptions.join(", ");
+    setFormData((prevState) => ({
+      ...prevState,
+      userrights: concatenatedOptions,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      console.log(dataArray1);
+      const response = await axios.put(
+        "https://btkbilling.bsite.net/api/User/updateuserrights",
+        dataArray1
+      );
+
+      notification.success({
+        message: "Update Successful",
+        description: "You have successfully Update User Rights.",
+      });
+    } catch (error) {
+      console.error("Error occurred during login:", error);
+    }
+  };
+
+  useEffect(() => {
+    setDataArray1(dataArray["User"]);
+    console.log(dataArray1)
+  }, dataArray1);
 
   return (
-   
-      <Container component="main" maxWidth="xs">
-        
+    <ThemeProvider theme={defaultTheme}>
+      <Container component="main" >
+       
         <Box
           sx={{
-            marginTop: 18,
-            
+            marginTop: 14,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+        
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Register
+            Update Rights
           </Typography>
           <Box
             component="form"
             onSubmit={handleSubmit}
             noValidate
             sx={{ mt: 1 }}
+            style={{width:'50%'}}
           >
             <TextField
               margin="normal"
@@ -113,21 +123,14 @@ export default function SignIn() {
               name="email"
               onChange={handleInputChange}
               autoFocus
-              value={formData.email}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="password"
-              type="password"
-              value={formData.password}
-              onChange={handleInputChange}
+              value={dataArray1.email}
+              InputProps={{
+                readOnly: true, // Make the input read-only
+              }}
             />
 
-            {iselectricityadmin.includes('admin') ||
-            iselectricityadmin.includes('electricitymanager') ? (
+            {iselectricityadmin.includes("admin") ||
+            iselectricityadmin.includes("electricitymanager") ? (
               <>
                 <InputLabel>Electricity Billing System</InputLabel>
 
@@ -136,7 +139,7 @@ export default function SignIn() {
                   <Select
                     label=" User Rights"
                     name="electricityrights"
-                    value={formData.electricityrights}
+                    value={dataArray1.electricityrights}
                     onChange={handleInputChange}
                   >
                     <MenuItem value="electricitynoaccess">No Access</MenuItem>
@@ -151,8 +154,8 @@ export default function SignIn() {
               <div></div>
             )}
 
-            {ismaintenanceadmin.includes('admin') ||
-            ismaintenanceadmin.includes('maintenancemanager') ? (
+            {ismaintenanceadmin.includes("admin") ||
+            ismaintenanceadmin.includes("maintenancemanager") ? (
               <>
                 <InputLabel>Maintenance Billing System</InputLabel>
 
@@ -161,7 +164,7 @@ export default function SignIn() {
                   <Select
                     label=" User Rights"
                     name="maintenancerights"
-                    value={formData.maintenancerights}
+                    value={dataArray1.maintenancerights}
                     onChange={handleInputChange}
                   >
                     <MenuItem value="maintenancenoaccess">No Access</MenuItem>
@@ -181,12 +184,16 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={() => {
+                handleSubmit();
+                handleCheckboxConcatenation();
+              }}
             >
-              Sign In
+              Update Rights
             </Button>
           </Box>
         </Box>
       </Container>
-  
+    </ThemeProvider>
   );
 }

@@ -42,7 +42,7 @@ function ViewCustomer() {
 
 const handleRowClick = (params) => {
   dataArray['User'] = params.row
-   navigate('/updateuser', { replace: true });     
+   navigate('/dashboard/updateuser', { replace: true });     
   };
 
 
