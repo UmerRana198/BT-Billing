@@ -160,7 +160,7 @@ const Addcustomer = () => {
                 <Row className="p-1">
 
                 <Col xl={4}>
-                <label className="form-label">
+                <label className="form-label"  style={{color:'Black'}}>
                       Bt No maintenance
                       </label>
                       <Form.Control
@@ -176,7 +176,7 @@ const Addcustomer = () => {
                       </Form.Control.Feedback>
               </Col>
                   <Col xl={4}>
-                    <label className="form-label">
+                    <label className="form-label"  style={{color:'Black'}}>
                       Customer No
                     </label>
                     <Form.Control
@@ -193,7 +193,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       Customer Name
                     </label>
                     <Form.Control
@@ -210,7 +210,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">CNIC No</label>
+                  <label className="form-label"  style={{color:'Black'}}>CNIC No</label>
                     <Form.Control
                       type="text"
                       name="cnicno"
@@ -225,7 +225,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       Father Name
                     </label>
                     <Form.Control
@@ -242,7 +242,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       Mobile No
                     </label>
                     <Form.Control
@@ -259,7 +259,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       Telephone No
                     </label>
                     <Form.Control
@@ -276,7 +276,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">BT No</label>
+                  <label className="form-label"  style={{color:'Black'}}>BT No</label>
                     <Form.Control
                       type="text"
                       placeholder="BT No"
@@ -291,7 +291,7 @@ const Addcustomer = () => {
                     </Form.Control.Feedback>
                   </Col>
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       Installed On
                     </label>
                     <Form.Control
@@ -310,7 +310,7 @@ const Addcustomer = () => {
                 <Row className="p-1">
 
                   <Col xl={4}>
-                  <label className="form-label">NTN No</label>
+                  <label className="form-label"  style={{color:'Black'}}>NTN No</label>
                     <Form.Control
                       type="text"
                       name="ntnno"
@@ -325,7 +325,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">Project</label>
+                  <label className="form-label"  style={{color:'Black'}}>Project</label>
                     <Form.Control
                       type="text"
                       placeholder="Project"
@@ -340,7 +340,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       Sub Project
                     </label>
                     <Form.Control
@@ -357,7 +357,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">Tarrif</label>
+                  <label className="form-label"  style={{color:'Black'}}>Tarrif</label>
 
                     <Form.Control
                       type="text"
@@ -377,7 +377,7 @@ const Addcustomer = () => {
                   </Col>
                   
                   <Col xl={4}>
-                  <label className="form-label">Bank No</label>
+                  <label className="form-label"  style={{color:'Black'}}>Bank No</label>
 
                     <Form.Control
                       type="text"

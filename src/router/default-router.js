@@ -2,10 +2,10 @@ import React from 'react'
 import Index from '../views/dashboard/index'
 // import { Switch, Route } from 'react-router-dom'
 
-import Customer from '../views/dashboard/special-pages/AddCustomer'
+import Customer from '../views/dashboard/special-pages/Customer/AddCustomer'
 import Default from '../layouts/dashboard/default';
-import ViewCustomer from '../views/dashboard/special-pages/ViewCustomer';
-import UpdateCustomer from'../views/dashboard/special-pages/UpdateCustomer'
+import ViewCustomer from '../views/dashboard/special-pages/Customer/ViewCustomer';
+import UpdateCustomer from'../views/dashboard/special-pages/Customer/UpdateCustomer'
 import Cookies from "js-cookie";
 import RegisterUser from '../views/dashboard/special-pages/Admin/RegisterUser'
 import ViewUser from '../views/dashboard/special-pages/Admin/ViewUser'

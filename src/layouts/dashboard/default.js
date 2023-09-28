@@ -34,20 +34,6 @@ import * as SettingSelector from "../../store/setting/selectors";
 import { useSelector } from "react-redux";
 
 
-// const Tour = () => {
-//   const tour = useContext(ShepherdTourContext);
-//   const { pathname } = useLocation();
-//   // useEffect(() => {
-//   //   if (
-//   //     pathname === "/dashboard" &&
-//   //     sessionStorage.getItem("tour") !== "true"
-//   //   ) {
-//   //     tour?.start();
-//   //   }
-//   // });
-//   return <Fragment></Fragment>;
-// };
-
 const Default = memo((props) => {
   const appName = useSelector(SettingSelector.app_name);
   useEffect(() => {});
@@ -60,7 +46,7 @@ const Default = memo((props) => {
       <main className="main-content">
         <div className="position-relative">
           <Header />
-          <SubHeader />
+          {/* <SubHeader /> */}
         </div>
         <div className="py-0 conatiner-fluid content-inner mt-n5">
         

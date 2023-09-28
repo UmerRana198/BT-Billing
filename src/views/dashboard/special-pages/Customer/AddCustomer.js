@@ -3,13 +3,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import axios from "axios";
 import { useState, useEffect } from "react";
-// import NavBar from './NavBar'
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
-import Cookies from "js-cookie"; // Import the js-cookie library
+import Cookies from "js-cookie";
 import { notification } from "antd";
-
-
 
 
 const Addcustomer = () => {
@@ -247,11 +244,13 @@ const Addcustomer = () => {
 
   return (
     <div style={{ width: "80%", marginLeft: '10px' ,marginTop:'60px'}}>
+      {/* <SubNav/> */}
       <Tab.Container defaultActiveKey="customerInfo">
         <Nav variant="tabs" className="mb-3">
           <Nav.Item>
-            <Nav.Link eventKey="customerInfo">Customer Info</Nav.Link>
+            <Nav.Link eventKey="customerInfo">Customer Form</Nav.Link>
           </Nav.Item>
+        
         </Nav>
 
 
@@ -263,7 +262,7 @@ const Addcustomer = () => {
                 <Row className="p-1">
 
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label" style={{color:'Black'}}>
                       Customer Name
                     </label>
                     <Form.Control
@@ -281,7 +280,7 @@ const Addcustomer = () => {
 
 
                   <Col xl={4}>
-                  <label className="form-label">CNIC No</label>
+                  <label className="form-label"  style={{color:'Black'}}>CNIC No</label>
                     <Form.Control
                       type="text"
                       name="cnicno"
@@ -297,7 +296,7 @@ const Addcustomer = () => {
 
 
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       Father Name
                     </label>
                     <Form.Control
@@ -315,7 +314,7 @@ const Addcustomer = () => {
 
 
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       Mobile No
                     </label>
                     <Form.Control
@@ -332,7 +331,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       Telephone No
                     </label>
                     <Form.Control
@@ -349,7 +348,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">Projects</label>
+                  <label className="form-label"  style={{color:'Black'}}>Projects</label>
                     <Form.Select
                       name="project"
                       value={Customer.project}
@@ -374,7 +373,7 @@ const Addcustomer = () => {
 
                 <Row className="p-1">
                 <Col xl={4}>
-                  <label className="form-label">Sub Project</label>
+                  <label className="form-label"  style={{color:'Black'}}>Sub Project</label>
                     <Form.Select
                       name="subproject"
                       value={Customer.subproject}
@@ -394,7 +393,7 @@ const Addcustomer = () => {
                   </Col>
                   
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       Installed On
                     </label>
                     <Form.Control
@@ -409,7 +408,7 @@ const Addcustomer = () => {
                     </Form.Control.Feedback>
                   </Col>
                   <Col xl={4}>
-                  <label className="form-label">Tariff</label>
+                  <label className="form-label"  style={{color:'Black'}}>Tariff</label>
                     <Form.Select
                       name="tariffid" // Updated name attribute to "tariffId"
                       value={Customer.tariffid}
@@ -432,7 +431,7 @@ const Addcustomer = () => {
 
                 <Row className="p-1">
                   <Col xl={4}>
-                  <label className="form-label">NTN No</label>
+                  <label className="form-label"  style={{color:'Black'}}>NTN No</label>
                     <Form.Control
                       type="text"
                       name="ntnno"
@@ -448,7 +447,7 @@ const Addcustomer = () => {
 
 
                   <Col xl={4} >
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       BTNO Status
                     </label>
                     <Form.Select
@@ -467,7 +466,7 @@ const Addcustomer = () => {
                   </Col>
 
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}}>
                       Location SeqNo
                     </label>
                     <Form.Control
@@ -487,7 +486,7 @@ const Addcustomer = () => {
 
                 <Row className="p-1">
                   <Col xl={4}>
-                  <label className="form-label">
+                  <label className="form-label"  style={{color:'Black'}} >
                       Bank No
                     </label>
                     <Form.Control

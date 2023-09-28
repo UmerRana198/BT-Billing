@@ -15,7 +15,7 @@ const SubHeader = memo((props) => {
 
     return (
         <Fragment>
-            {/* <div className="iq-navbar-header" style={{height: "215px"}}>
+            <div className="iq-navbar-header" style={{height: "215px"}}>
                 <Container fluid className=" iq-container">
                     <Row>
                         <Col md="12">
@@ -46,7 +46,7 @@ const SubHeader = memo((props) => {
                     <img src={topHeader4} alt="header" className="theme-color-yellow-img img-fluid w-100 h-100 animated-scaleX"/>
                     <img src={topHeader5} alt="header" className="theme-color-pink-img img-fluid w-100 h-100 animated-scaleX"/>
                 </div>
-            </div> */}
+            </div>
         </Fragment>
     )
 })

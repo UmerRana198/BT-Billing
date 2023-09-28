@@ -123,7 +123,7 @@ const VerticalNav = memo((props) => {
                       </g>
                     </svg>
                   </i>
-                  <i className="sidenav-mini-icon">Add</i>
+                  <i className="sidenav-mini-icon"></i>
                   <span className="item-name">Add Customer</span>
                 </Link>
               </li>
@@ -154,7 +154,7 @@ const VerticalNav = memo((props) => {
                       </g>
                     </svg>
                   </i>
-                  <i className="sidenav-mini-icon">View</i>
+                  <i className="sidenav-mini-icon"></i>
                   <span className="item-name">View Customer</span>
                 </Link>
               </li>
@@ -239,7 +239,7 @@ const VerticalNav = memo((props) => {
                       </g>
                     </svg>
                   </i>
-                  <i className="sidenav-mini-icon">Register</i>
+                  <i className="sidenav-mini-icon"></i>
                   <span className="item-name">Register User</span>
                 </Link>
               </li>
@@ -269,7 +269,7 @@ const VerticalNav = memo((props) => {
                       </g>
                     </svg>
                   </i>
-                  <i className="sidenav-mini-icon">View</i>
+                  <i className="sidenav-mini-icon"></i>
                   <span className="item-name">View User</span>
                 </Link>
               </li>
@@ -300,7 +300,7 @@ const VerticalNav = memo((props) => {
                       </g>
                     </svg>
                   </i>
-                  <i className="sidenav-mini-icon">Update</i>
+                  <i className="sidenav-mini-icon"></i>
                   <span className="item-name">Update Password</span>
                 </Link>
               </li>
