@@ -36,8 +36,8 @@ const VerticalNav = memo((props) => {
   //location
   let location = useLocation();
   return (
-    <Fragment >
-      <Accordion as="ul" className="navbar-nav iq-main-menu" width='20px'>
+    <Fragment  >
+      <Accordion as="ul" className="navbar-nav iq-main-menu" width='20px' >
         <li>
           <hr className="hr-horizontal" />
         </li>
