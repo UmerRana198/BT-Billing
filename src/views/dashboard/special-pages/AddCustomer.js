@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import Cookies from "js-cookie"; // Import the js-cookie library
-
+import { notification } from "antd";
 
 
 
@@ -122,8 +122,8 @@ const Addcustomer = () => {
 
     const newError = {};
     // if (!customerno || customerno === "") newError.customerno = "Customer No required";
-    if (!customername || customername === "") newError.customername = "Customer Name required";
-    if (/\d/.test(customername)) newError.customername = "Customer Name must not contain digits";
+    if (!customername || customername === "") newError.customername = "required";
+    else if (/\d/.test(customername)) newError.customername = "Customer Name must not contain digits";
     else if (!cnicno || cnicno === "") newError.cnicno = " required";
     else if (!/^\d{13}$/.test(cnicno)) newError.cnicno = "must be a 13-digit number without dashes";
     else if (!fathername || fathername === "") newError.fathername = " required";
@@ -183,19 +183,48 @@ const Addcustomer = () => {
     const formErrors = validateForm();
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
-      alert("Error in form submission");
+      notification.error({
+        message: "Error in form submission",
+        style: {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: "40px",
+          width: "320px",
+        },
+      });
+     
     } else {
       axios
         .post("https://btkbilling.bsite.net/api/CustomerInformations", Customer)
         .then((res) => {
           setBtNo(Customer.btno);
-          alert("Saved Successfully")
-          navigate("/viewCustomer", { replace: true });
+          notification.success({
+            message: "Record Saved Successfully!",
+            style: {
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "40px",
+              width: "320px",
+            },
+          });
+          navigate("/dashboard/viewCustomer", { replace: true });
           setSaveStatus("Saved");
         })
         .catch((error) => {
           if (error.response && error.response.status === 400) {
-            alert("Wrong Data Format. Please Enter Correct Data");
+            notification.error({
+              message: "Wrong Data Format. Please Enter Correct Data",
+              style: {
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "40px",
+                width: "320px",
+              },
+            });
+          
           } else if (error.response && error.response.status === 409) {
             // console.log(error.response.data);
             alert("BTNo  Already Exists");
