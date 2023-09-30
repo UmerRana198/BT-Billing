@@ -12,7 +12,7 @@ import ViewUser from '../views/dashboard/special-pages/Admin/ViewUser'
 import UpdatePass from '../views/dashboard/special-pages/Admin/UpdatePassword'
 import { Navigate } from 'react-router-dom'; 
 import UpdateUser from '../views/dashboard/special-pages/Admin/UpdateUser'
-
+import Configuration from '../views/dashboard/special-pages/Configuration/Configuration'
 
 
 const Email=Cookies.get("userEmail")
@@ -54,6 +54,10 @@ export const DefaultRouter = [
             {
                 path: 'dashboard/updateuser',
                 element: Cookies.get("userEmail") ? <UpdateUser /> : <Navigate to="/" />,
+            },
+            {
+                path: 'dashboard/configuration',
+                element: Cookies.get("userEmail") ? <Configuration /> : <Navigate to="/" />,
             },
            
         ]

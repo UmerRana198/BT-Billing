@@ -27,7 +27,7 @@ const ShareOffcanvas = ( ) => {
                   <Offcanvas.Title>Share</Offcanvas.Title>
                </Offcanvas.Header>
                <Offcanvas.Body>
-                  <div className="d-flex flex-wrap align-items-center">
+                  {/* <div className="d-flex flex-wrap align-items-center">
                      <div className="text-center me-3 mb-3">
                         <img src={image1} className="img-fluid rounded mb-2" alt=""/>
                         <h6>Facebook</h6>
@@ -52,7 +52,7 @@ const ShareOffcanvas = ( ) => {
                         <img src={image6} className="img-fluid rounded mb-2" alt=""/>
                         <h6>YouTube</h6>
                      </div>
-                  </div>
+                  </div> */}
                </Offcanvas.Body>
             </Offcanvas>
          </>
