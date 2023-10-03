@@ -3,22 +3,22 @@ import axios from 'axios';
 import { Table, Button, Form } from 'react-bootstrap';
 import { notification } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import dataArray from './Util';
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 
 function ViewCustomer() {
  
   const [data, setData] = useState([]);
   const [selectedRows, setSelectedRows] = useState([]);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [filters, setFilters] = useState({
     customerno: '',
     btnostatus: '',
     btnomaintenance: '',
     customername: '',
-    cnicno: '',
+    cnicno: '', 
   });
  
 
@@ -89,7 +89,7 @@ useEffect(() => {
               alignItems: 'center',
               justifyContent: 'center',
               marginTop: '40px',
-              width: '220px',
+              width: '220px', 
             },
           });
         }
@@ -150,7 +150,7 @@ useEffect(() => {
                     <div>Sub Project</div>
                     <input
                       type="text"
-                      placeholder="Filter"
+                      placeholder="Filter"  
                       value={filters.subproject}
                       onChange={(e) => setFilters({ ...filters, subproject: e.target.value })}
                     />

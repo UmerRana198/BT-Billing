@@ -27,6 +27,7 @@
     "bootstrap": "^5.2.3",
     "choices.js": "^10.1.0",
     "datatables.net-bs5": "^1.13.4",
+    "firebase": "^10.4.0",
     "fslightbox-react": "^1.6.2-2",
     "fullcalendar-interaction": "^5.3.3",
     "immutability-helper": "^3.1.1",

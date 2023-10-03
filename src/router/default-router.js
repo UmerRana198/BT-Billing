@@ -59,6 +59,8 @@ export const DefaultRouter = [
                 path: 'dashboard/configuration',
                 element: Cookies.get("userEmail") ? <Configuration /> : <Navigate to="/" />,
             },
+
+       
            
         ]
     }

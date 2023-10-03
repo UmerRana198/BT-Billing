@@ -36,6 +36,7 @@ const VerticalNav = memo((props) => {
   //location
   let location = useLocation();
   return (
+
     <Fragment  >
       <Accordion as="ul" className="navbar-nav iq-main-menu" width='20px' >
         <li>
@@ -424,6 +425,36 @@ const VerticalNav = memo((props) => {
                   <span className="item-name">Update Password</span>
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  className={`${
+                    location.pathname === "/dashboard/special-pages/kanban"
+                      ? "active"
+                      : ""
+                  } nav-link`}
+                  to="/dashboard/additem"
+                >
+                  <i className="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <g>
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="8"
+                          fill="currentColor"
+                        ></circle>
+                      </g>
+                    </svg>
+                  </i>
+                  <i className="sidenav-mini-icon"></i>
+                  <span className="item-name">Add item</span>
+                </Link>
+              </li>
             </ul>
           </Accordion.Collapse>
         </Accordion.Item>
@@ -432,6 +463,7 @@ const VerticalNav = memo((props) => {
        
       </Accordion>
     </Fragment>
+    
   );
 });
 
