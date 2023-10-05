@@ -246,3 +246,8 @@ useEffect(() => {
 }
 
 export default ViewCustomer;
+
+
+
+
+

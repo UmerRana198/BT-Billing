@@ -11,7 +11,7 @@ import {  Outlet } from "react-router-dom";
 import Header from "../../components/partials/dashboard/HeaderStyle/header";
 
 //subheader
-// import SubHeader from "../../components/partials/dashboard/HeaderStyle/sub-header";
+ import SubHeader from "../../components/partials/dashboard/HeaderStyle/sub-header";
 
 //sidebar
 import Sidebar from "../../components/partials/dashboard/SidebarStyle/sidebar";
@@ -46,13 +46,13 @@ const Default = memo((props) => {
       <main className="main-content">
         <div className="position-relative">
           <Header />
-          {/* <SubHeader /> */}
+          {/* <SubHeader/> */}
         </div>
         <div className="py-0 conatiner-fluid content-inner mt-n5">
-        
+
           <Outlet />
         </div>
-        
+
         <Footer />
       </main>
       <SettingOffCanvas />

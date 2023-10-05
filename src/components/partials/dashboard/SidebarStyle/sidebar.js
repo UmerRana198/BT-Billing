@@ -16,7 +16,7 @@ import Logo from '../../components/logo';
 
 // export const SidebarDark =() =>{
 
-// }
+// }  
 
 
 const Sidebar = memo((props) => {
@@ -76,7 +76,8 @@ const Sidebar = memo((props) => {
     return (
         <Fragment>
         <aside
-        className={` ${sidebarColor} ${sidebarType.join( " " )} ${sidebarMenuStyle} ${sidebarHide.join( " " ) ? 'sidebar-none' : 'sidebar'}   sidebar-base  ` }
+          // style={{ backgroundColor: '#0E2954' }}
+        className={` ${sidebarColor} ${sidebarType.join( " " )} ${("sidebar-default navs-pill-all")} ${sidebarHide.join( " " ) ? 'sidebar-none' : 'sidebar'}   sidebar-base  ` }
         data-sidebar="responsive"
       >
         <div className="sidebar-header d-flex align-items-center justify-content-start">
