@@ -20,6 +20,7 @@
     "@mui/material": "^5.14.10",
     "@mui/x-data-grid": "^6.15.0",
     "@reduxjs/toolkit": "^1.8.1",
+    "@syncfusion/ej2-react-grids": "^23.1.39",
     "antd": "^5.9.3",
     "aos": "^2.3.4",
     "apexcharts": "^3.33.0",

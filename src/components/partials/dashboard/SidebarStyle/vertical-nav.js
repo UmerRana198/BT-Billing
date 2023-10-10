@@ -42,10 +42,9 @@ const VerticalNav = memo((props) => {
   //location
   let location = useLocation();
   return (
-
-    <Fragment  >
-      <Accordion as="ul" className="navbar-nav iq-main-menu" width='20px' >
-          {/* <li>
+    <Fragment>
+      <Accordion as="ul" className="navbar-nav iq-main-menu" width="20px">
+        {/* <li>
             <hr className="hr-horizontal" />
           </li> */}
         <li className="nav-item static-item">
@@ -56,31 +55,43 @@ const VerticalNav = memo((props) => {
         </li>
         <Accordion.Item
           as="li"
-          eventKey="sidebar-special"
-          bsPrefix={`nav-item ${active === "special" ? "active" : ""} `}
-          onClick={() => setActive("special")}
+          eventKey="customer"
+          bsPrefix={`nav-item ${active === "customer" ? "active" : ""} `}
+          onClick={() => setActive("customer")}
         >
           <CustomToggle
-            eventKey="sidebar-special"
+            eventKey="customer"
             onClick={(activeKey) => setActiveMenu(activeKey)}
           >
-            
-            <GroupIcon/>
+            <GroupIcon />
             <span className="item-name">Customer</span>
-            
+            <i className="right-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </i>
           </CustomToggle>
-          <Accordion.Collapse eventKey="sidebar-special">
+          <Accordion.Collapse eventKey="customer">
             <ul className="sub-nav">
               <li className="nav-item">
                 <Link
                   className={`${
-                    location.pathname === "/dashboard/billing"
-                      ? "active"
-                      : ""
+                    location.pathname === "/dashboard/billing" ? "active" : ""
                   } nav-link`}
                   to="/dashboard/customer"
                 >
-                   <PersonAddIcon />
+                  <PersonAddIcon />
                   <i className="sidenav-mini-icon"></i>
                   <span className="item-name">Add Customer</span>
                 </Link>
@@ -95,7 +106,7 @@ const VerticalNav = memo((props) => {
                   } nav-link`}
                   to="/dashboard/viewcustomer"
                 >
-                 <SearchIcon/>
+                  <SearchIcon />
                   <i className="sidenav-mini-icon"></i>
                   <span className="item-name">View Customer</span>
                 </Link>
@@ -103,7 +114,6 @@ const VerticalNav = memo((props) => {
             </ul>
           </Accordion.Collapse>
         </Accordion.Item>
-
 
         <Accordion.Item
           as="li"
@@ -115,8 +125,7 @@ const VerticalNav = memo((props) => {
             eventKey="configuration"
             onClick={(activeKey) => setActiveMenu(activeKey)}
           >
-          
-            <GroupIcon/>
+            <GroupIcon />
             <span className="item-name">Configuration</span>
             <i className="right-icon">
               <svg
@@ -137,7 +146,6 @@ const VerticalNav = memo((props) => {
           </CustomToggle>
           <Accordion.Collapse eventKey="configuration">
             <ul className="sub-nav">
-             
               <li className="nav-item">
                 <Link
                   className={`${
@@ -147,8 +155,7 @@ const VerticalNav = memo((props) => {
                   } nav-link`}
                   to="/dashboard/configuration"
                 >
-                  
-                  <PersonAddIcon/>
+                  <PersonAddIcon />
                   <i className="sidenav-mini-icon"></i>
                   <span className="item-name">Add Configuration</span>
                 </Link>
@@ -156,10 +163,6 @@ const VerticalNav = memo((props) => {
             </ul>
           </Accordion.Collapse>
         </Accordion.Item>
-
-
-
-
 
         <Accordion.Item
           as="li"
@@ -171,7 +174,7 @@ const VerticalNav = memo((props) => {
             eventKey="sidebar-configuration"
             onClick={(activeKey) => setActiveMenu(activeKey)}
           >
-           <AdminPanelSettingsIcon />
+            <AdminPanelSettingsIcon />
             <span className="item-name">Admin</span>
             <i className="right-icon">
               <svg
@@ -192,7 +195,6 @@ const VerticalNav = memo((props) => {
           </CustomToggle>
           <Accordion.Collapse eventKey="sidebar-configuration">
             <ul className="sub-nav">
-             
               <li className="nav-item">
                 <Link
                   className={`${
@@ -202,7 +204,7 @@ const VerticalNav = memo((props) => {
                   } nav-link`}
                   to="/dashboard/RegisterUser"
                 >
-                <PersonAddIcon/>
+                  <PersonAddIcon />
                   <i className="sidenav-mini-icon"></i>
                   <span className="item-name">Register User</span>
                 </Link>
@@ -216,7 +218,7 @@ const VerticalNav = memo((props) => {
                   } nav-link`}
                   to="/dashboard/viewuser"
                 >
-                 <SearchIcon/>
+                  <SearchIcon />
                   <i className="sidenav-mini-icon"></i>
                   <span className="item-name">View User</span>
                 </Link>
@@ -231,7 +233,7 @@ const VerticalNav = memo((props) => {
                   } nav-link`}
                   to="/dashboard/updatepass"
                 >
-                 <PersonAddIcon/>
+                  <PersonAddIcon />
                   <i className="sidenav-mini-icon"></i>
                   <span className="item-name">Update Password</span>
                 </Link>
@@ -269,12 +271,8 @@ const VerticalNav = memo((props) => {
             </ul>
           </Accordion.Collapse>
         </Accordion.Item>
-
-
-       
       </Accordion>
     </Fragment>
-    
   );
 });
 

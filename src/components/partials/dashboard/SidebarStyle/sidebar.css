@@ -1,0 +1,6 @@
+/* Define the color for the selected menu item */
+.nav-link.active {
+    color: #ff0000; /* Change this to the desired color (e.g., red) */
+    /* Add any other styles you want for the selected item here */
+  }
+  
