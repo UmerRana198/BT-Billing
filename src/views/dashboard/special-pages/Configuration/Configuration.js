@@ -791,3 +791,29 @@
   };
 
   export default Addcustomer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

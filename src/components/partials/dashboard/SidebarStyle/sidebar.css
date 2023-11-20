@@ -3,4 +3,11 @@
     color: #ff0000; /* Change this to the desired color (e.g., red) */
     /* Add any other styles you want for the selected item here */
   }
+  .customer-accordion:hover ul.sub-nav {
+    display: block;
+  }
+  
+  .customer-accordion ul.sub-nav {
+    display: none;
+  }
   
