@@ -16,7 +16,23 @@ import Configuration from '../views/dashboard/special-pages/Configuration/Config
 
 
 const Email=Cookies.get("userEmail")
+const electricityrights = Cookies.get("electricityrights");
+const maintenancerights = Cookies.get("maintenancerights");
+const hasElectricityEditorRights =
+electricityrights &&
+(electricityrights.includes("electricityeditor") ||
+  electricityrights.includes("electricityadmin") ||
+  electricityrights.includes("electricitymanager")||
+  electricityrights.includes("electricityreader")
+  );
 
+
+  const hasMaintenanceEditorRights =
+  maintenancerights &&
+  (maintenancerights.includes("maintenanceeditor") ||
+  maintenancerights.includes("maintenanceadmin") ||
+  maintenancerights.includes("maintenancemanager")||
+  maintenancerights.includes("electricityreader"));
 export const DefaultRouter = [
     {
         path: '*',
@@ -28,36 +44,36 @@ export const DefaultRouter = [
             },
             {
                 path: 'dashboard/Customer',
-                element: Cookies.get("userEmail") ? <Customer /> : <Navigate to="/" />,
+                element:hasElectricityEditorRights ||hasMaintenanceEditorRights ? <Customer /> : <Navigate to="/" />,
             },{
                 path: 'dashboard/ViewCustomer',
-                element: Cookies.get("userEmail") ? <ViewCustomer /> : <Navigate to="/" />,
+                element: hasElectricityEditorRights  ||hasMaintenanceEditorRights ? <ViewCustomer /> : <Navigate to="/" />,
             },
             {
                 path: 'dashboard/updatecustomer',
-                element: Cookies.get("userEmail") ? <UpdateCustomer /> : <Navigate to="/" />,
+                element: hasElectricityEditorRights   ||hasMaintenanceEditorRights ? <UpdateCustomer /> : <Navigate to="/" />,
             },
             {
                 path: 'dashboard/RegisterUser',
-                element: Cookies.get("userEmail") ? <RegisterUser /> : <Navigate to="/" />,
+                element:hasElectricityEditorRights  ||hasMaintenanceEditorRights  ? <RegisterUser /> : <Navigate to="/" />,
             },
 
             {
                 path: 'dashboard/viewuser',
-                element: Cookies.get("userEmail") ? <ViewUser /> : <Navigate to="/" />,
+                element: hasElectricityEditorRights  ||hasMaintenanceEditorRights  ? <ViewUser /> : <Navigate to="/" />,
             },
             {
                 path: 'dashboard/updatepass',
-                element: Cookies.get("userEmail") ? <UpdatePass /> : <Navigate to="/" />,
+                element:hasElectricityEditorRights  ||hasMaintenanceEditorRights ? <UpdatePass /> : <Navigate to="/" />,
             },
 
             {
                 path: 'dashboard/updateuser',
-                element: Cookies.get("userEmail") ? <UpdateUser /> : <Navigate to="/" />,
+                element: hasElectricityEditorRights  ||hasMaintenanceEditorRights ? <UpdateUser /> : <Navigate to="/" />,
             },
             {
                 path: 'dashboard/configuration',
-                element: Cookies.get("userEmail") ? <Configuration /> : <Navigate to="/" />,
+                element:hasElectricityEditorRights  ||hasMaintenanceEditorRights ? <Configuration /> : <Navigate to="/" />,
             },
 
        
