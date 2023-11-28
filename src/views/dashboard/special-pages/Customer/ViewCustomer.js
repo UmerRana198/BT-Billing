@@ -26,7 +26,7 @@ function ViewCustomer() {
 useEffect(() => {
   // Make a GET request without any parameters
   axios
-    .get('https://btkbilling.bsite.net/api/CustomerInformations/GetAllInfo')
+    .get('https://ebill.bsite.net/api/CustomerInformations/GetAllInfo')
     .then((response) => {
       setData(response.data);
       console.log("ViewTestCustomerAfterGet: ", data);

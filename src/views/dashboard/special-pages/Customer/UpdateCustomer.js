@@ -26,7 +26,7 @@ const Addcustomer = () => {
   async function Fetchconfigurations() {
     try {
       const response = await axios.get(
-        "  https://btkbilling.bsite.net/api/Configurations"
+        "https://ebill.bsite.net/api/Configurations"
       );
       const data = response.data;
     

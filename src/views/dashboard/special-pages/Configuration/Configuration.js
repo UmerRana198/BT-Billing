@@ -325,7 +325,7 @@
 
     const getConfigurations = async () => {
       await axios
-        .get("https://btkbilling.bsite.net/api/Configurations")
+        .get("https://ebill.bsite.net//api/Configurations")
         .then((res) => {
           setData(res.data);
           // console.log(res.data);

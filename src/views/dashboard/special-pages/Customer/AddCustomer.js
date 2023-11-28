@@ -193,7 +193,7 @@ const Addcustomer = () => {
      
     } else {
       axios
-        .post("https://btkbilling.bsite.net/api/CustomerInformations", Customer)
+        .post("https://ebill.bsite.net/api/CustomerInformations", Customer)
         .then((res) => {
           setBtNo(Customer.btno);
           notification.success({
