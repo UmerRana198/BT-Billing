@@ -102,7 +102,7 @@ export default function SignIn() {
         Cookies.set("electricityrights",electricityrights)
         Cookies.set("maintenancerights",maintenancerights)
        
-        navigate("/dashboard/Customer", { replace: true });
+        navigate("dashboard/Home", { replace: true });
         window.location.reload() 
      
       }

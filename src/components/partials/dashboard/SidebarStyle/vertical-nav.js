@@ -98,7 +98,7 @@ const VerticalNav = memo((props) => {
                     className={`${
                       location.pathname === "/dashboard/billing" ? "active" : ""
                     } nav-link`}
-                    to="/dashboard/customer"
+                    to="/dashboard/Home/customer"
                   >
                     <PersonAddIcon />
                     <i className="sidenav-mini-icon"></i>
@@ -120,7 +120,7 @@ const VerticalNav = memo((props) => {
                         ? "active"
                         : ""
                     } nav-link`}
-                    to="/dashboard/viewcustomer"
+                    to="/dashboard/Home/ViewCustomer"
                   >
                     <SearchIcon />
                     <i className="sidenav-mini-icon"></i>
@@ -182,7 +182,7 @@ const VerticalNav = memo((props) => {
                     className={`${
                       location.pathname === "/dashboard/billing" ? "active" : ""
                     } nav-link`}
-                    to="/dashboard/customer"
+                    to="/dashboard/Home/customer"
                   >
                     <PersonAddIcon />
                     <i className="sidenav-mini-icon"></i>
@@ -209,7 +209,7 @@ const VerticalNav = memo((props) => {
                         ? "active"
                         : ""
                     } nav-link`}
-                    to="/dashboard/viewcustomer"
+                    to="/dashboard/Home/updatecustomerviewcustomer"
                   >
                     <SearchIcon />
                     <i className="sidenav-mini-icon"></i>
@@ -272,7 +272,7 @@ const VerticalNav = memo((props) => {
                   ? "active"
                   : ""
               } nav-link`}
-              to="/dashboard/configuration"
+              to="/dashboard/Home/configuration"
             >
               <PersonAddIcon />
               <i className="sidenav-mini-icon"></i>
@@ -334,7 +334,7 @@ const VerticalNav = memo((props) => {
                       ? "active"
                       : ""
                   } nav-link`}
-                  to="/dashboard/RegisterUser"
+                  to="/dashboard/Home/RegisterUser"
                 >
                   <PersonAddIcon />
                   <i className="sidenav-mini-icon"></i>
@@ -348,7 +348,7 @@ const VerticalNav = memo((props) => {
                       ? "active"
                       : ""
                   } nav-link`}
-                  to="/dashboard/viewuser"
+                  to="/dashboard/Home/viewuser"
                 >
                   <SearchIcon />
                   <i className="sidenav-mini-icon"></i>
@@ -363,7 +363,7 @@ const VerticalNav = memo((props) => {
                       ? "active"
                       : ""
                   } nav-link`}
-                  to="/dashboard/updatepass"
+                  to="/dashboard/Home/updatepass"
                 >
                   <PersonAddIcon />
                   <i className="sidenav-mini-icon"></i>

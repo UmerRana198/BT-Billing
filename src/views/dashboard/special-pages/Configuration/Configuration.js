@@ -325,7 +325,7 @@
 
     const getConfigurations = async () => {
       await axios
-        .get("https://ebill.bsite.net//api/Configurations")
+        .get("https://ebill.bsite.net/api/Configurations")
         .then((res) => {
           setData(res.data);
           // console.log(res.data);
@@ -334,7 +334,7 @@
 
     const getTarrifs = async () => {
       await axios
-        .get("https://btkbilling.bsite.net/api/Tariffs")
+        .get("https://ebill.bsite.net/api/Tariffs")
         .then((res) => {
           setTariffData(res.data);
           // console.log(tariffData);
@@ -343,7 +343,7 @@
 
     const getMeterInformations = async () => {
       await axios
-        .get("https://btkbilling.bsite.net/api/MeterInformations")
+        .get("https://ebill.bsite.net/api/MeterInformations")
         .then((res) => {
           setData(res.data);
           // console.log(res.data);
@@ -352,7 +352,7 @@
 
     const getTaxInformations = async () => {
       await axios
-        .get("https://btkbilling.bsite.net/api/TaxInformations")
+        .get("https://ebill.bsite.net/api/TaxInformations")
         .then((res) => {
           setTaxData(res.data);
           // console.log(res.data);
@@ -505,7 +505,7 @@
       } else {
         // console.log(Configuration);
         axios
-          .put(`https://BTKBILLING.bsite.net/api/Configurations/${Configuration.configid}`, Configuration)
+          .put(`https://ebill.bsite.net/api/Configurations/${Configuration.configid}`, Configuration)
 
           .then((res) => {
             notification.success({
@@ -573,7 +573,7 @@
       } else {
         
         axios
-          .post("https://BTKBILLING.bsite.net/api/Configurations", Configuration)
+          .post("https://ebill.bsite.net/api/Configurations", Configuration)
         // .post("https://localhost:7285/api/Configurations", Configuration) 
           .then((res) => {
             notification.success({
