@@ -43,6 +43,7 @@ export const DefaultRouter = [
                 element: Email ? <Index />: <Navigate to="/"/>
             },
             {
+<<<<<<< HEAD
                 path: 'dashboard/Customer',
                 element: Email ? <Customer /> : <Navigate to="/" />,
             },{
@@ -64,10 +65,34 @@ export const DefaultRouter = [
             },
             {
                 path: 'dashboard/updatepass',
+=======
+                path: 'dashboard/Home/customer',
+                element:Email ? <Customer /> : <Navigate to="/" />,
+            },{
+                path: 'dashboard/Home/ViewCustomer',
+                element:Email ? <ViewCustomer /> : <Navigate to="/" />,
+            },
+            {
+                path: 'dashboard/Home/updatecustomer',
+                element: Email ? <UpdateCustomer /> : <Navigate to="/" />,
+            },
+            {
+                path: 'dashboard/Home/RegisterUser',
+                element:Email  ? <RegisterUser /> : <Navigate to="/" />,
+            },
+
+            {
+                path: 'dashboard/Home/viewuser',
+                element: Email ? <ViewUser /> : <Navigate to="/" />,
+            },
+            {
+                path: 'dashboard/Home/updatepass',
+>>>>>>> f802d370abe90b3dc72318777d10f5b1207f4c32
                 element:Email ? <UpdatePass /> : <Navigate to="/" />,
             },
 
             {
+<<<<<<< HEAD
                 path: 'dashboard/updateuser',
                 element:  Email ? <UpdateUser /> : <Navigate to="/" />,
             },
@@ -80,6 +105,20 @@ export const DefaultRouter = [
                 path: 'dashboard/Home',
                 element: Email ? <Home /> : <Navigate to="/" />,
             },
+=======
+                path: 'dashboard/Home/updateuser',
+                element: Email ? <UpdateUser /> : <Navigate to="/" />,
+            },
+            {
+                path: 'dashboard/Home/configuration',
+                element:Email? <Configuration /> : <Navigate to="/" />,
+            },
+            {
+                path: 'dashboard/Home',
+                element:Email? <Home /> : <Navigate to="/" />,
+            },
+            
+>>>>>>> f802d370abe90b3dc72318777d10f5b1207f4c32
            
         ]
     }

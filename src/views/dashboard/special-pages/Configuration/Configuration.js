@@ -143,7 +143,7 @@
 
     const getTarrifs = async () => {
       await axios
-        .get("https://btkbilling.bsite.net/api/Tariffs")
+        .get("https://ebill.bsite.net/api/Tariffs")
         .then((res) => {
           setTariffData(res.data);
           // console.log(tariffData);
@@ -314,7 +314,7 @@
       } else {
         // console.log(Configuration);
         axios
-          .put(`https://BTKBILLING.bsite.net/api/Configurations/${Configuration.configid}`, Configuration)
+          .put(`https://ebill.bsite.net/api/Configurations/${Configuration.configid}`, Configuration)
 
           .then((res) => {
             notification.success({
@@ -382,7 +382,7 @@
       } else {
         
         axios
-          .post("https://BTKBILLING.bsite.net/api/Configurations", Configuration)
+          .post("https://ebill.bsite.net/api/Configurations", Configuration)
         // .post("https://localhost:7285/api/Configurations", Configuration) 
           .then((res) => {
             notification.success({

@@ -20,7 +20,7 @@ function ViewCustomer() {
     console.log(iselectricityadmin)
     console.log(ismaintenanceadmin)
     if (iselectricityadmin !== '') {
-      axios.get("https://btkbilling.bsite.net/api/User/GetUsersWithElectricityRights")
+      axios.get("https://ebill.bsite.net/api/User/GetUsersWithElectricityRights")
         .then((res) => {
           setData(res.data);
         })

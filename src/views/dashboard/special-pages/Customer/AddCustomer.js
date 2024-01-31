@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import Cookies from "js-cookie";
 import { notification } from "antd";
+import Sidebar from "../../../../components/partials/dashboard/SidebarStyle/sidebar";
+import * as SettingSelector from "../../../../store/setting/selectors";
 
 
 const Addcustomer = () => {
@@ -193,7 +195,7 @@ const Addcustomer = () => {
      
     } else {
       axios
-        .post("https://btkbilling.bsite.net/api/CustomerInformations", Customer)
+        .post("https://ebill.bsite.net/api/CustomerInformations", Customer)
         .then((res) => {
           setBtNo(Customer.btno);
           notification.success({
@@ -240,11 +242,12 @@ const Addcustomer = () => {
 
 
 
-
-
   return (
+
+   
     <div style={{ width: "80%", marginLeft: '10px' ,marginTop:'60px'}}>
       {/* <SubNav/> */}
+      
       <Tab.Container defaultActiveKey="customerInfo">
         <Nav variant="tabs" className="mb-3">
           <Nav.Item>
@@ -517,6 +520,8 @@ const Addcustomer = () => {
         </Tab.Content>
       </Tab.Container>
     </div>
+    
+
   );
 };
 

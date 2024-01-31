@@ -11,6 +11,7 @@ import Docs from './Docs.png'
 import admin from './admin.png'
 import config from './config.png'
 import tariff from './tariff.png'
+<<<<<<< HEAD
 
 const Main = () => {
 const navigate = useNavigate();
@@ -25,6 +26,72 @@ const cardInfo = [
 
  ]
 
+=======
+import Cookies from "js-cookie";
+
+const Main = () => {
+
+
+
+const navigate = useNavigate();
+const Email = Cookies.get("userEmail");
+const electricityrights = Cookies.get("electricityrights");
+const maintenancerights = Cookies.get("maintenancerights");
+const hasElectricityEditorRights =
+  electricityrights &&
+  (electricityrights.includes("electricityeditor") ||
+    electricityrights.includes("electricityadmin") ||
+    electricityrights.includes("electricitymanager") ||
+    electricityrights.includes("electricityreader"));
+
+const hasMaintenanceEditorRights =
+  maintenancerights &&
+  (maintenancerights.includes("maintenanceeditor") ||
+    maintenancerights.includes("maintenanceadmin") ||
+    maintenancerights.includes("maintenancemanager") ||
+    maintenancerights.includes("electricityreader"));
+ const cardInfo = [
+//   {image:people,   modName:"Customer", title:"Customer",  modulepath:"addcustomer" },
+//   {image:config, modName:"Config", title:"Config",modulepath:"Configuration"},
+//   {image:Docs,  modName:"Bills", title:"Bill Details",  modulepath:"viewcreatedbills" },
+//   {image:Docs, modName:"Readings", title:"Readings", modulepath:"Readings"},
+//   {image:tariff, modName:"Tariff", title:"Tariff Information",modulepath:"Tariff"},
+//   {image:admin, modName:"Admin", title:"Admin",modulepath:"viewuser"},
+
+ ]
+
+
+
+
+if (hasElectricityEditorRights) {
+  cardInfo.unshift({ image: people, modName: "Customer", title: "Customer", modulepath: "customer" });
+}
+
+if (hasElectricityEditorRights) {
+  cardInfo.unshift({ image: config, modName: "Config", title: "Config", modulepath: "configuration" });
+}
+
+if (hasElectricityEditorRights) {
+  cardInfo.unshift({ image: Docs, modName: "Bills", title: "Bill Details", modulepath: "Bills" });
+}
+
+
+if (hasElectricityEditorRights) {
+  cardInfo.unshift({ image: Docs, modName: "Readings", title: "Readings", modulepath: "Readings" });
+}
+
+
+if (hasElectricityEditorRights) {
+  cardInfo.unshift({ image: tariff, modName: "tariff", title: "Tariff", modulepath: "tariff" });
+}
+
+
+if (hasElectricityEditorRights) {
+  cardInfo.unshift({ image: admin, modName: "admin", title: "admin", modulepath: "viewuser" });
+}
+
+
+>>>>>>> f802d370abe90b3dc72318777d10f5b1207f4c32
  const cardClicked = () => {
   this.setState((prevState, { count }) => ({
     count: prevState.count + 1

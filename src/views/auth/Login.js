@@ -63,8 +63,13 @@ export default function SignIn() {
 
     try {   
       const response = await axios.post(
+<<<<<<< HEAD
           "https://ebill.bsite.net/api/User/login",
         // "https://localhost:7285/api/User/login",
+=======
+          //"https://btkbilling.bsite.net/api/User/login",
+         "https://ebill.bsite.net/api/User/login",
+>>>>>>> f802d370abe90b3dc72318777d10f5b1207f4c32
         null, // Set the data parameter to null
         {
           params: {
@@ -102,7 +107,11 @@ export default function SignIn() {
         Cookies.set("electricityrights",electricityrights)
         Cookies.set("maintenancerights",maintenancerights)
        
+<<<<<<< HEAD
         navigate("/Home", { replace: true });
+=======
+        navigate("dashboard/Home", { replace: true });
+>>>>>>> f802d370abe90b3dc72318777d10f5b1207f4c32
         window.location.reload() 
      
       }
