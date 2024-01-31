@@ -63,7 +63,7 @@ export default function SignIn() {
 
     try {   
       const response = await axios.post(
-          "https://btkbilling.bsite.net/api/User/login",
+          "https://ebill.bsite.net/api/User/login",
         // "https://localhost:7285/api/User/login",
         null, // Set the data parameter to null
         {
@@ -102,7 +102,7 @@ export default function SignIn() {
         Cookies.set("electricityrights",electricityrights)
         Cookies.set("maintenancerights",maintenancerights)
        
-        navigate("/dashboard/Customer", { replace: true });
+        navigate("/Home", { replace: true });
         window.location.reload() 
      
       }

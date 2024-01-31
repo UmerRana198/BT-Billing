@@ -13,7 +13,7 @@ import UpdatePass from '../views/dashboard/special-pages/Admin/UpdatePassword'
 import { Navigate } from 'react-router-dom'; 
 import UpdateUser from '../views/dashboard/special-pages/Admin/UpdateUser'
 import Configuration from '../views/dashboard/special-pages/Configuration/Configuration'
-
+import Home from '../views/dashboard/special-pages/Home/Home'
 
 const Email=Cookies.get("userEmail")
 const electricityrights = Cookies.get("electricityrights");
@@ -40,43 +40,46 @@ export const DefaultRouter = [
         children: [
             {
                 path: 'dashboard',
-                element: <Index />
+                element: Email ? <Index />: <Navigate to="/"/>
             },
             {
                 path: 'dashboard/Customer',
-                element:hasElectricityEditorRights ||hasMaintenanceEditorRights ? <Customer /> : <Navigate to="/" />,
+                element: Email ? <Customer /> : <Navigate to="/" />,
             },{
                 path: 'dashboard/ViewCustomer',
-                element: hasElectricityEditorRights  ||hasMaintenanceEditorRights ? <ViewCustomer /> : <Navigate to="/" />,
+                element:  Email ? <ViewCustomer /> : <Navigate to="/" />,
             },
             {
                 path: 'dashboard/updatecustomer',
-                element: hasElectricityEditorRights   ||hasMaintenanceEditorRights ? <UpdateCustomer /> : <Navigate to="/" />,
+                element:  Email ? <UpdateCustomer /> : <Navigate to="/" />,
             },
             {
                 path: 'dashboard/RegisterUser',
-                element:hasElectricityEditorRights  ||hasMaintenanceEditorRights  ? <RegisterUser /> : <Navigate to="/" />,
+                element: Email ? <RegisterUser /> : <Navigate to="/" />,
             },
 
             {
                 path: 'dashboard/viewuser',
-                element: hasElectricityEditorRights  ||hasMaintenanceEditorRights  ? <ViewUser /> : <Navigate to="/" />,
+                element:  Email  ? <ViewUser /> : <Navigate to="/" />,
             },
             {
                 path: 'dashboard/updatepass',
-                element:hasElectricityEditorRights  ||hasMaintenanceEditorRights ? <UpdatePass /> : <Navigate to="/" />,
+                element:Email ? <UpdatePass /> : <Navigate to="/" />,
             },
 
             {
                 path: 'dashboard/updateuser',
-                element: hasElectricityEditorRights  ||hasMaintenanceEditorRights ? <UpdateUser /> : <Navigate to="/" />,
+                element:  Email ? <UpdateUser /> : <Navigate to="/" />,
             },
             {
                 path: 'dashboard/configuration',
-                element:hasElectricityEditorRights  ||hasMaintenanceEditorRights ? <Configuration /> : <Navigate to="/" />,
+                element: Email ? <Configuration /> : <Navigate to="/" />,
             },
 
-       
+            {
+                path: 'dashboard/Home',
+                element: Email ? <Home /> : <Navigate to="/" />,
+            },
            
         ]
     }

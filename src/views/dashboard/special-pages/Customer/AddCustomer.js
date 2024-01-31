@@ -28,7 +28,7 @@ const Addcustomer = () => {
   async function Fetchconfigurations() {
     try {
       const response = await axios.get(
-        "https://btkbilling.bsite.net/api/Configurations"
+        "https://ebill.bsite.net/api/Configurations"
       );
       const data = response.data;
       const projects = data.filter((item) => item.configkey === "Project");
@@ -51,7 +51,7 @@ const Addcustomer = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://btkbilling.bsite.net/api/Tariffs/GetDistinctTariffs"
+          "https://ebill.bsite.net/api/Tariffs/GetDistinctTariffs"
         );
 
         if (Array.isArray(response.data)) {

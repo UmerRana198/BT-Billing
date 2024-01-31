@@ -71,7 +71,7 @@ export default function Updateuser() {
     try {
       console.log(dataArray1);
       const response = await axios.put(
-        "https://btkbilling.bsite.net/api/User/updateuserrights",
+        "https://ebill.bsite.net/api/User/updateuserrights",
         dataArray1
       );
 

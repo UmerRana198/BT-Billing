@@ -1,194 +1,3 @@
-  // import axios from "axios";
-  // import { useEffect, useState } from "react";
-  // function Configuration() {
-  // const [id, setId] = useState("");
-  // const [configKey, setConfigkey] = useState("");
-  // const [configValue, setConfigValue] = useState("");
-  // const [config, setUsers] = useState([]);
-  
-  //   useEffect(() => {
-  //     (async () => await Load())();
-  //   }, []);
-  
-  //   async function Load() {
-      
-  //     const result = await axios.get("https://bahriatownbilling.bsite.net/api/TblConfiguration");
-  //     setUsers(result.data);
-  //     console.log(result.data);
-  //   }
-  
-  //    async function save(event) {
-    
-  //      event.preventDefault();
-  //      try {
-  //        await axios.post("https://bahriatownbilling.bsite.net/api/TblConfiguration", {
-          
-  //        configKey: configKey,
-  //        configValue: configValue,
-        
-  //        });
-  //        alert("Configuration Save Successfully");
-  //            setId("");
-  //            setConfigkey("");
-  //            setConfigValue("");
-        
-      
-  //        Load();
-  //      } catch (err) {
-  //        alert(err);
-  //      }
-  //    }
-  //    async function edit(config) {
-  //     setConfigkey(config.configKey);
-  //     setConfigValue(config.configValue);
-    
-  
-  //      setId(config.id);
-  //     }
-  
-  //    async function Delete(id) {
-  //    await axios.delete("https://bahriatownbilling.bsite.net/api/TblConfiguration/" + id);
-  //     alert("Configuration deleted Successfully");
-  //     setId("");
-  //     setConfigkey("");
-  //     setConfigValue("");
-  //     Load();
-  //    }
-  
-  //    async function update(event)
-  //     {
-  //      event.preventDefault();
-  //      try {
-  //      await axios.put("https://bahriatownbilling.bsite.net/api/TblConfiguration/"+ config.find((u) => u.id === id).id || id,
-  //          {
-  //          id: id,
-  //          configKey: configKey,
-  //          configValue: configValue,
-  //          }
-  //        );
-  //        alert("Configuration  Update SuccessFully");
-  //        setId("");
-  //        setConfigkey("");
-  //        setConfigValue("");
-  //        Load();
-  //      } catch (err) {
-  //        alert(err);
-  //      }
-  //   }
-  //     return (
-  //       <div>
-  //         <h1>Student Details</h1>
-  //       <div class="container mt-4">
-  //         <form>
-  //           <div class="form-group">
-            
-  //             <input
-  //               type="text"
-  //               class="form-control"
-  //               id="id"
-                
-  //               value={id}
-  //               onChange={(event) => {
-  //                 setId(event.target.value);
-  //               }}
-  //             />
-  //             <label>Configuration Key</label>
-  //             <input
-  //               type="text"
-  //               class="form-control"
-  //               id="txtconfigKey"
-  //               value={configKey}
-  //               onChange={(event) => {
-  //                 setConfigkey(event.target.value);
-  //               }}
-  //             />
-  //           </div>
-  //           <div class="form-group">
-  //             <label>COnfiguration Value</label>
-  //             <input
-  //               type="text"
-  //               class="form-control"
-  //               id="txtconfigValue"
-  //               value={configValue}
-  //               onChange={(event) => {
-  //                 setConfigValue(event.target.value);
-  //               }}
-  //             />
-  //           </div>
-  //           <div>
-  //             <button class="btn btn-primary mt-4" onClick={save}>
-  //               Submit
-  //             </button>
-  //             <button class="btn btn-warning mt-4" onClick={update}>
-  //               Update
-  //             </button>
-  //           </div>
-  //         </form>
-  //       </div>
-  //       <br></br>
-  //       <table class="table table-dark" align="center">
-  //         <thead>
-  //           <tr>
-  //             <th scope="col">Id</th>
-  //             <th scope="col">COnfig key</th>
-  //             <th scope="col">COnfig value</th>
-          
-  
-  //             <th scope="col">Option</th>
-  //           </tr>
-  //         </thead>
-  //         {config.map(function fn(configs) {
-  //           return (
-  //             <tbody>
-  //               <tr>
-  //                 <th scope="row">{configs.id} </th>
-  //                 <td>{configs.configKey}</td>
-  //                 <td>{configs.configValue}</td>
-                  
-  //                 <td>
-  //                   <button
-  //                     type="button"
-  //                     class="btn btn-warning"
-  //                     onClick={() => edit(configs)}
-  //                   >
-  //                     Edit
-  //                   </button>
-  //                   <button
-  //                     type="button"
-  //                     class="btn btn-danger"
-  //                     onClick={() => Delete(configs.id)}
-  //                   >
-  //                     Delete
-  //                   </button>
-  //                 </td>
-  //               </tr>
-  //             </tbody>
-  //           );
-  //         })}
-  //       </table>
-          
-  //       </div>
-  //     );
-  //   }
-    
-  //   export default Configuration;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   import { Form, Button, Tab, Nav, TabPane } from "react-bootstrap";
   import Row from "react-bootstrap/Row";
   import Col from "react-bootstrap/Col";
@@ -325,7 +134,7 @@
 
     const getConfigurations = async () => {
       await axios
-        .get("https://btkbilling.bsite.net/api/Configurations")
+        .get("https://ebill.bsite.net/api/Configurations")
         .then((res) => {
           setData(res.data);
           // console.log(res.data);
@@ -343,7 +152,7 @@
 
     const getMeterInformations = async () => {
       await axios
-        .get("https://btkbilling.bsite.net/api/MeterInformations")
+        .get("https://ebill.bsite.net/api/MeterInformations")
         .then((res) => {
           setData(res.data);
           // console.log(res.data);
@@ -352,7 +161,7 @@
 
     const getTaxInformations = async () => {
       await axios
-        .get("https://btkbilling.bsite.net/api/TaxInformations")
+        .get("https://ebill.bsite.net/api/TaxInformations")
         .then((res) => {
           setTaxData(res.data);
           // console.log(res.data);
