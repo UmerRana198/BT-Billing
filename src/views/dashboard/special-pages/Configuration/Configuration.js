@@ -103,6 +103,8 @@
       setSelectedTaxRow("1")
     };
 
+    
+
 
     const handleTariffRowClick = (params) => {
       const selectedRow = tariffData.find((row) => row.tariffid === params.id);
