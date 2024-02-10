@@ -721,7 +721,7 @@ const Addcustomer = () => {
     } else {
       console.log(Customer)
       axios
-        .post("https://localhost:7011/api/CustomerInformation/AddCustomer", Customer)
+        .post("https://billingsys.bsite.net/api/CustomerInformation/AddCustomer", Customer)
         .then((res) => {
           setBtNo(Customer.btno);
           notification.success({

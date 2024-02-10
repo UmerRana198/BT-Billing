@@ -234,10 +234,8 @@ const Help_List = () => {
 
 
 
- // ...
 
 useEffect(() => {
-    // axios.get('https://localhost:7011/api/CustomerInformation/GetAllCustomerData')
     axios.get('https://billingsys.bsite.net/api/CustomerInformation/GetAllCustomerData')
         .then(response => {
             if (response.data && Array.isArray(response.data)) {
@@ -272,9 +270,6 @@ useEffect(() => {
         });
 }, []);
 
-// ...
-
-    
 
 
 
