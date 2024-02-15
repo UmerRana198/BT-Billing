@@ -106,7 +106,7 @@ export default function SignIn() {
         Cookies.set("maintenancerights",maintenancerights)
        
 
-        navigate("dashboard/ViewCustomer", { replace: true });
+        navigate("dashboard/Home/Customer", { replace: true });
 
         window.location.reload() 
      
