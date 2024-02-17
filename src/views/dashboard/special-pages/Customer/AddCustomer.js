@@ -10,7 +10,7 @@ import { notification } from "antd";
 import Sidebar from "../../../../components/partials/dashboard/SidebarStyle/sidebar";
 import * as SettingSelector from "../../../../store/setting/selectors";
 
-
+//
 const Addcustomer = () => {
   const navigate = useNavigate();
   const [tarrifIds, setTarrifIds] = useState([]);
